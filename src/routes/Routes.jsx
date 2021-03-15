@@ -1,10 +1,9 @@
 import React from 'react'
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
 } from "react-router-dom";
-import { CSSTransition } from 'react-transition-group';
+import { CSSTransition,TransitionGroup } from 'react-transition-group';
 
 import HomePage from '../components/HomePage/HomePage.jsx'
 import Overview from '../components/Overview/Overview.jsx'

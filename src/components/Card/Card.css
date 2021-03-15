@@ -39,3 +39,19 @@
 .pre img{ 
   transform: rotateY(180deg);
 }
+
+.card-enter {
+  opacity: 0;
+}
+.card-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.card-exit {
+  opacity: 0;
+  
+}
+.card-exit-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}

@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import { CSSTransition } from 'react-transition-group';
 import './Card.css'
 import next from './next.png'
 import play from './play.png'
@@ -46,16 +47,34 @@ const Card = () => {
   }
   const [i,setIndex] = useState(0);
 
+  const [showMessage, setShowMessage] = useState(true);
+  const preRome = () => {
+    setIndex((old) => old - 1);
+    setShowMessage((old) => !old)
+  }
+  const nextRome = () => {
+    setIndex((old) => old + 1);
+    setShowMessage((old) => !old);
+  }
   return(
     <div style={{height: '100%'}}>
       <audio ref={voice} src={`http://chunjiez.com:3000/audio/${contentArr[i].voice}`}></audio>
       <div className='progress'>{i+1}/{contentLength}</div>
-      <div className='card-content'>{contentArr[i].content}</div>
-      <div className='card-rome'>{contentArr[i].rome}</div>
+      <CSSTransition 
+        classNames="card"
+        in={showMessage}
+        timeout={500}   
+      >
+        <>
+          <div className='card-content'>{contentArr[i].content}</div>
+          <div className='card-rome'>{contentArr[i].rome}</div>
+        </>   
+      </CSSTransition>
+      
       <div className='btn-box'>
         <div className='play btn' onClick={playMusic}><img src={play} alt=""/></div>
-        {i === 0?null:<div className='pre btn' onClick={() => {setIndex((old) => old - 1)}}><img src={next} alt=""/></div>}
-        {i === contentLength-1?null:<div className='next btn' onClick={() => {setIndex((old) => old + 1)}}><img src={next} alt=""/></div>}
+        {i === 0?null:<div className='pre btn' onClick={preRome}><img src={next} alt=""/></div>}
+        {i === contentLength-1?null:<div className='next btn' onClick={nextRome}><img src={next} alt=""/></div>}
       </div>
     </div>
   )
