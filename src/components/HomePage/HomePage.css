@@ -1,0 +1,21 @@
+.home-btn{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate( -50%, -50%);
+  height: 300px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center
+}
+.home-btn div{
+  background-color: #f9cec7;
+  border-radius: 12px;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 18px;
+}

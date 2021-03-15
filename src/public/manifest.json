@@ -1,0 +1,15 @@
+{
+  "short_name": "Kana-card",
+  "name": "Kana-card",
+  "icons": [
+    {
+      "src": "./cherry-blossoms-144x144.ico",
+      "type": "image/x-icon",
+      "sizes": "144x144"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#27ae60",
+  "background_color": "#f8d9d4"
+}

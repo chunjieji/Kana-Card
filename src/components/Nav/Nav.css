@@ -1,0 +1,15 @@
+.nav{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 24px 0 24px;
+  font-size: 18px;
+}
+img{
+  width: 16px;
+  height: 16px;
+}
+.place-holder{
+  width: 16px;
+  height: 16px;
+}
